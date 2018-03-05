@@ -1,0 +1,27 @@
+1. CREAR UNA IMAGEN CON LA APLICACIÓN JAVA
+docker build -t dockerdemo1 . (usará el Dockerfile)
+
+2. CREAR UN CONTENEDOR CON LA IMAGEN
+docker run d- -p 8080:8080 dockerdemo1 (-d es en el backrgound)
+
+3. PROBAR LA APLICACIÓN JAVA
+docker-machine ip para ver a qué IP lanzar las peticiones
+usar Postman para probar los verbos
+
+---
+
+4. SUBIRLA A DOCKER-HUB
+Crear primero un repositorio en Docker-Hub
+Hacer login: docker login --username=luisgomezcaballero
+Introducir password
+docker images para ver cuál subimos
+Etiquetar imagen con "docker tag e06a9dcdc5da luisgomezcaballero/dockerdemo1:v1"
+Subir la imagen etiquetada al repo: "docker push luisgomezcaballero/dockerdemo1"
+
+---
+
+5. INSTRUCCIONES PARA DESCARGAR DE DOCKER-HUB
+docker run -p 8080:8080 luisgomezcaballero/dockerdemo1:v1
+
+6. INSTRUCCIONES PARA PROBAR
+Usar 192.168.99.100 en Postman
